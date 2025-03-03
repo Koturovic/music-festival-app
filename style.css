@@ -53,3 +53,95 @@ header{
     align-items: flex-start;
     padding-top: 56px;
 }
+/*
+.program{
+    
+
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('images/Rectangle\ 27.png'),
+    url('images/Frame\ 1.png');
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 400px;
+    
+    background-size: cover; 
+    background-position: center;                          PREDSTOJECI DOGADJAJI
+    background-repeat: no-repeat;
+}
+.container{
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: medium;  
+    font-size: 48px;
+    padding-left: 120px;
+    padding-top: -40px;
+}
+*/
+.button-container {
+    display: flex;
+    justify-content: center; /* Centriranje horizontalno */
+    align-items: center; /* Centriranje vertikalno */
+    gap: 20px; /* Razmak između dugmadi */
+    position: absolute; 
+    top: 80%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); /* Precizno centriranje */
+}
+.custom-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50px;
+    background: transparent;
+    width: 250px;
+    transition: 0.3s ;
+    cursor: pointer;
+}
+.custom-btn:hover {
+    background: greenyellow;
+}
+
+.custom-btn .icon {
+    background: green;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+.custom-btn .icon img{
+    width: 30px;
+    height: 30px;
+}
+.dobrodosli{
+    height: 244px;
+    width: 634px;
+    background-color: transparent;
+    color: white;
+    
+    justify-content: center;
+
+    text-align: center;
+    align-items: center;
+    
+    position: absolute;
+    top: 45%;
+    left: 29%;
+
+    font-size: 48px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
