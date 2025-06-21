@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_email'] = $user['email'];
             
             echo "Uspešno logovanje!";
-            header("Location: ../index.html");
+            header("Location: ../nastupi.html");
             exit;
         } else {
             die("Pogrešna lozinka!");
