@@ -2,7 +2,7 @@
 
 $sName = "localhost";
 $uName = "root";
-$pass  = "Ubuntuvm2025@";
+$pass  = "";
 $db_name = "music-festival-posetioci";
 
 try {
