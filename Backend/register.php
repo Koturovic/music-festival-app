@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($stmt->execute()) {
         echo "Uspešna registracija!";
-        header("Location: ../index.html");
+        header("Location: ../nastupi.html");
         exit;
     } else {
         echo "Greška prilikom registracije.";
