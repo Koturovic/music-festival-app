@@ -1,5 +1,5 @@
 document.querySelector("form").addEventListener("submit", function(e) {
-    const name = document.getElementById('username').value.trim();
+    const name = document.getElementById('name').value.trim();
     const password = document.getElementById('password').value.trim();
 
     let errorMsg = "";

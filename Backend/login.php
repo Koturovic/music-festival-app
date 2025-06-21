@@ -3,16 +3,16 @@ require_once 'dbconn.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Preuzimanje i sanitizacija podataka
-    $email = trim($_POST['email']);
+    $name = trim($_POST['name']);
     $password = trim($_POST['password']);
 
-    if (empty($email) || empty($password)) {
+    if (empty($name) || empty($password)) {
         die("Sva polja su obavezna!");
     }
 
     // Provera korisnika u bazi
-    $stmt = $conn->prepare("SELECT id, name, email, password FROM posetioci WHERE email = :email");
-    $stmt->bindParam(":email", $email);
+    $stmt = $conn->prepare("SELECT id, name, email, password FROM posetioci WHERE name = :name");
+    $stmt->bindParam(":name", $name);
     $stmt->execute();
 
     if ($stmt->rowCount() > 0) {
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             die("Pogrešna lozinka!");
         }
     } else {
-        die("Korisnik sa ovom email adresom ne postoji!");
+        die("Korisnik sa ovim imenom ne postoji!");
     }
 }
 ?> 

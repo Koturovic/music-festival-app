@@ -11,6 +11,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Sva polja su obavezna!");
     }
 
+    // Provera da li korisničko ime već postoji
+    $stmt = $conn->prepare("SELECT id FROM posetioci WHERE name = :name");
+    $stmt->bindParam(":name", $name);
+    $stmt->execute();
+
+    if ($stmt->rowCount() > 0) {
+        die("Korisnik sa ovim imenom već postoji!");
+    }
+
     // Provera da li email već postoji
     $stmt = $conn->prepare("SELECT id FROM posetioci WHERE email = :email");
     $stmt->bindParam(":email", $email);
