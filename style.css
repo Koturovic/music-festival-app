@@ -47,7 +47,7 @@ header{
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url('images/LandingPage.png') no-repeat center center fixed;
+    background: url('images/LandingPage.png');
     display: flex;
     flex-direction: column;
     align-items: flex-start;
