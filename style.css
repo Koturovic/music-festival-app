@@ -269,6 +269,11 @@ body {
       display: block;
 
     }
+    #Dodaj-u-omiljene{
+        background-color: #e61919;
+        color: white;
+
+    }
 
 .carousel{
     margin:50px;
@@ -343,3 +348,9 @@ body {
     
 
 }
+.form-range{
+    background-color: grey;
+    border-radius: 20px;
+}
+
+
