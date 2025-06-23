@@ -348,9 +348,90 @@ body {
     
 
 }
+
 .form-range{
     background-color: grey;
     border-radius: 20px;
 }
 
+
+
+.top{
+    max-width: 1000px;
+    margin: auto;
+}
+#aca-lukas-slika img{
+    width: 100%;
+    border-radius: 8px;
+
+}
+.naslov h2{
+    font-size: 48px;
+    font-weight: medium;
+    display: inline-block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+.o-izvodjacu{
+    font-weight: medium;
+    margin-bottom: 10px;
+
+}
+.opis{
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+.detalji-nastupa h5{
+    font-weight: medium;
+    margin-bottom: 10px;
+    
+}
+.detalji-nastupa .row div{
+    font-size: 32px;
+}
+
+body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff;
+      padding: 40px;
+    }
+
+    .top {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    #aca-lukas-slika img {
+      border-radius: 8px;
+    }
+
+    .naslov h2 {
+      font-size: 48px;
+      font-weight: 600;
+      display: inline-block;
+      padding: 5px 10px;
+      margin-bottom: 70px;
+      margin-left: -10px;
+      
+    }
+
+    .o-izvodjacu {
+      font-weight: 600;
+      margin-bottom: 60px;
+    }
+
+    .opis {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 80px;
+    }
+
+    .detalji-nastupa h5 {
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
+
+    .detalji-nastupa .row div {
+      font-size: 16px;
+    }
 
