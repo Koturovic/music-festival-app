@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS komentari (
     izvodjac VARCHAR(100) NOT NULL,
     korisnik VARCHAR(100) NOT NULL,
     komentar TEXT NOT NULL
+    
 );
 
 -- Tabela za ocene

@@ -73,7 +73,7 @@ if (!isset($_SESSION['user_id'])) {
         </div>
         <div class="d-flex gap-2 justify-content-center">
           <button type="submit" class="submit-btn">Pošalji komentar</button>
-          <button id="Dodaj-u-omiljene" class="submit-btn" type="button">Dodaj u omiljene</button>
+          <button id="Dodaj-u-omiljene" class="submit-btn" type="button" data-izvodjac="Aca Lukas">Dodaj u omiljene</button>
         </div>
       </form>
     </div>
@@ -108,6 +108,7 @@ if (!isset($_SESSION['user_id'])) {
     });
   }
 </script>
+<script src="js/dodaj_u_omiljene.js"></script>
     
     
     

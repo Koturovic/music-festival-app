@@ -64,40 +64,30 @@ if (!isset($_SESSION['user_id'])) {
   <div class="row text-center">
     <div class="col-md-6 mb-5">
       <h3>KOMENTARIŠITE IZVOĐAČA</h3>
-      <div class="custom-box mb-3">
-        <input type="text" class="form-control border-0 bg-transparent" placeholder="Izaberite izvođača..">
-      </div>
-      <textarea class="form-control comment-box mb-3" rows="5" placeholder="Komentarišite.."></textarea>
-      
-      <div class="container">
-        <div class="row">
-          <div class="col-4">
-            <button id="submit-komentar" class="submit-btn">Submit</button>
-
-          </div>
-
-          <div class="col-8">
-            <button id="Dodaj-u-omiljene" class="submit-btn">Dodaj u omiljene</button>
-
-          </div>
+      <form method="POST" action="../Backend/komentar_ocena.php">
+        <input type="hidden" name="izvodjac" value="Milica Pavlovic">
+        <div class="custom-box mb-3">
+          <textarea class="form-control comment-box mb-3" name="komentar" rows="5" placeholder="Komentarišite.." required></textarea>
         </div>
-      </div>
-      
-      
+        <div class="d-flex gap-2 justify-content-center">
+          <button type="submit" class="submit-btn">Pošalji komentar</button>
+          <button id="Dodaj-u-omiljene" class="submit-btn" type="button" data-izvodjac="Milica Pavlovic">Dodaj u omiljene</button>
+        </div>
+      </form>
     </div>
 
     <div class="col-md-6 mb-5">
       <h3>OCENITE IZVOĐAČA</h3>
-      <div class="custom-box mb-3">
-        <input type="text" class="form-control border-0 bg-transparent" placeholder="Izaberite izvođača..">
-      </div>
-      <div class="mb-3">
-        <label for="customRange3" class="form-label">
-          Ocena: <span id="rangeValue">2.5</span>
-        </label>
-        <input type="range" class="form-range" min="1" max="10" step="1" value="5" id="customRange3">
-      </div>
-      <button id="submit-ocena" class="submit-btn">Submit</button>
+      <form method="POST" action="../Backend/komentar_ocena.php">
+        <input type="hidden" name="izvodjac" value="Milica Pavlovic">
+        <div class="mb-3">
+          <label for="customRange3" class="form-label">
+            Ocena: <span id="rangeValue">5</span>
+          </label>
+          <input type="range" class="form-range" min="1" max="10" step="1" value="5" id="customRange3" name="ocena">
+        </div>
+        <button type="submit" class="submit-btn">Pošalji ocenu</button>
+      </form>
     </div>
   </div>
 </div>
@@ -116,5 +106,6 @@ if (!isset($_SESSION['user_id'])) {
     });
   }
 </script>
+<script src="js/dodaj_u_omiljene.js"></script>
 </body>
 </html>
