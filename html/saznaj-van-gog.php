@@ -1,9 +1,17 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: html/login.html");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="sr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sloba Radanovic</title>
+  <title>Van Gogh</title>
 
   <!-- Google font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
@@ -16,19 +24,19 @@
     <div class="row align-items-start">
       <!-- Leva kolona: slika -->
       <div class="col-md-5" id="aca-lukas-slika">
-        <img src="../images/slobaa.jpg" class="img-fluid" alt="Milica Pavlovic" />
+        <img src="../images/van.jpeg" class="img-fluid" alt="Van Gogh" />
       </div>
 
       <!-- Desna kolona: tekst -->
       <div class="col-md-7 ps-4">
         <div class="naslov">
-          <h2>Sloba Radanovic</h2>
+          <h2>Van Gogh</h2>
         </div>
 
         <div class="o-izvodjacu"><h5> <b>O izvođaču</b></h5></div>
 
         <div class="opis">
-        Sloba Radanović je poznati srpski pevač i bivši član grupe "Zabranjeno pušenje". Njegov prepoznatljiv glas i emotivne pesme osvojile su publiku širom regiona.
+        Van Gogh je poznata srpska rok grupa osnovana 1986. godine. Njihov energični zvuk i hitovi poput „Neko te ima“ i „Strast“ učinili su ih jednom od najuticajnijih rok grupa na ovim prostorima.
         </div>
 
         <div class="detalji-nastupa">
@@ -39,9 +47,9 @@
             <div class="col-4">Scena</div>
           </div>
           <div class="row ">
-            <div class="col-4">28.3.2025</div>
+            <div class="col-4">26.3.2025</div>
             <div class="col-4">21:00</div>
-            <div class="col-4">Peta scena</div>
+            <div class="col-4">Treca scena</div>
           </div>
         </div>
       </div>

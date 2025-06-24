@@ -1,9 +1,18 @@
+
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: html/login.html");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="sr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Milica Pavlovic</title>
+  <title>Sasa Matic</title>
 
   <!-- Google font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
@@ -16,19 +25,19 @@
     <div class="row align-items-start">
       <!-- Leva kolona: slika -->
       <div class="col-md-5" id="aca-lukas-slika">
-        <img src="../images/milica.jpeg" class="img-fluid" alt="Milica Pavlovic" />
+        <img src="../images/sasa-matic.jpg" class="img-fluid" alt="Sasa Matic" />
       </div>
 
       <!-- Desna kolona: tekst -->
       <div class="col-md-7 ps-4">
         <div class="naslov">
-          <h2>Milica Pavlovic</h2>
+          <h2>Sasa Matic</h2>
         </div>
 
         <div class="o-izvodjacu"><h5> <b>O izvođaču</b></h5></div>
 
         <div class="opis">
-        Milica Pavlović je popularna srpska pop-folk pevačica poznata po energičnim nastupima, modernom imidžu i hitovima poput „Sexy Señorita” i „Provereno“. Njena karijera je obeležena uspešnim albumima i prepoznatljivim spojem urbanog popa i tradicionalnih balkanskih zvukova.
+            Saša Matić je popularni srpski pevač poznat po emotivnim baladama i specifičnom glasu. Iako je od rođenja slep, izgradio je uspešnu muzičku karijeru i postao jedan od najvoljenijih izvođača na Balkanu.
         </div>
 
         <div class="detalji-nastupa">
@@ -39,9 +48,9 @@
             <div class="col-4">Scena</div>
           </div>
           <div class="row ">
-            <div class="col-4">26.3.2025</div>
-            <div class="col-4">21:00</div>
-            <div class="col-4">Treca scena</div>
+            <div class="col-4">25.3.2025</div>
+            <div class="col-4">22:00</div>
+            <div class="col-4">Glavna scena</div>
           </div>
         </div>
       </div>
@@ -49,9 +58,11 @@
   </section>
 
 
+    
+    
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <div class="container">
+    <div class="container" id="komentari-padding">
   <div class="row text-center">
     <div class="col-md-6 mb-5">
       <h3>KOMENTARIŠITE IZVOĐAČA</h3>

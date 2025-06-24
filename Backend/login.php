@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'dbconn.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -21,13 +22,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Provera lozinke
         if (password_verify($password, $user['password'])) {
             // Uspesno logovanje
-            session_start();
+            
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_name'] = $user['name'];
             $_SESSION['user_email'] = $user['email'];
             
-            echo "Uspešno logovanje!";
-            header("Location: ../nastupi.html");
+            
+            header("Location: ../nastupi.php");
             exit;
         } else {
             die("Pogrešna lozinka!");

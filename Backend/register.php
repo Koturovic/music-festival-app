@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'dbconn.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -32,8 +33,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bindParam(":password", $hashed_password);
 
     if ($stmt->execute()) {
-        echo "Uspešna registracija!";
-        header("Location: ../nastupi.html");
+        $last_id = $conn->lastInsertId();
+        $_SESSION['user_id'] = $last_id;
+        $_SESSION['user_name'] = $name;
+        $_SESSION['user_email'] = $email;
+
+        header("Location: ../nastupi.php");
         exit;
     } else {
         echo "Greška prilikom registracije.";

@@ -1,9 +1,16 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.html");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="sr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sasa Matic</title>
+  <title>Aca Lukas</title>
 
   <!-- Google font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
@@ -16,19 +23,19 @@
     <div class="row align-items-start">
       <!-- Leva kolona: slika -->
       <div class="col-md-5" id="aca-lukas-slika">
-        <img src="../images/sasa-matic.jpg" class="img-fluid" alt="Sasa Matic" />
+        <img src="../images/aca-lukas.png" class="img-fluid" alt="Aca Lukas" />
       </div>
 
       <!-- Desna kolona: tekst -->
       <div class="col-md-7 ps-4">
         <div class="naslov">
-          <h2>Sasa Matic</h2>
+          <h2>Aca Lukas</h2>
         </div>
 
         <div class="o-izvodjacu"><h5> <b>O izvođaču</b></h5></div>
 
         <div class="opis">
-            Saša Matić je popularni srpski pevač poznat po emotivnim baladama i specifičnom glasu. Iako je od rođenja slep, izgradio je uspešnu muzičku karijeru i postao jedan od najvoljenijih izvođača na Balkanu.
+          Aca Lukas je popularni srpski pevač poznat po energičnim nastupima i prepoznatljivom spoju turbo-folka i pop-rock zvuka. Njegova muzička karijera traje više od dve decenije, a hitovi poput „Lična karta“ i „Upali svetlo“ učinili su ga jednim od najpoznatijih izvođača na Balkanu.
         </div>
 
         <div class="detalji-nastupa">
@@ -39,8 +46,8 @@
             <div class="col-4">Scena</div>
           </div>
           <div class="row ">
-            <div class="col-4">25.3.2025</div>
-            <div class="col-4">22:00</div>
+            <div class="col-4">21.3.2025</div>
+            <div class="col-4">21:00</div>
             <div class="col-4">Glavna scena</div>
           </div>
         </div>
@@ -49,6 +56,8 @@
   </section>
 
 
+  
+    
     
     
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
@@ -57,40 +66,30 @@
   <div class="row text-center">
     <div class="col-md-6 mb-5">
       <h3>KOMENTARIŠITE IZVOĐAČA</h3>
-      <div class="custom-box mb-3">
-        <input type="text" class="form-control border-0 bg-transparent" placeholder="Izaberite izvođača..">
-      </div>
-      <textarea class="form-control comment-box mb-3" rows="5" placeholder="Komentarišite.."></textarea>
-      
-      <div class="container">
-        <div class="row">
-          <div class="col-4">
-            <button id="submit-komentar" class="submit-btn">Submit</button>
-
-          </div>
-
-          <div class="col-8">
-            <button id="Dodaj-u-omiljene" class="submit-btn">Dodaj u omiljene</button>
-
-          </div>
+      <form method="POST" action="../Backend/komentar_ocena.php">
+        <input type="hidden" name="izvodjac" value="Aca Lukas">
+        <div class="custom-box mb-3">
+          <textarea class="form-control comment-box mb-3" name="komentar" rows="5" placeholder="Komentarišite.." required></textarea>
         </div>
-      </div>
-      
-      
+        <div class="d-flex gap-2 justify-content-center">
+          <button type="submit" class="submit-btn">Pošalji komentar</button>
+          <button id="Dodaj-u-omiljene" class="submit-btn" type="button">Dodaj u omiljene</button>
+        </div>
+      </form>
     </div>
 
     <div class="col-md-6 mb-5">
       <h3>OCENITE IZVOĐAČA</h3>
-      <div class="custom-box mb-3">
-        <input type="text" class="form-control border-0 bg-transparent" placeholder="Izaberite izvođača..">
-      </div>
-      <div class="mb-3">
-        <label for="customRange3" class="form-label">
-          Ocena: <span id="rangeValue">2.5</span>
-        </label>
-        <input type="range" class="form-range" min="1" max="10" step="1" value="5" id="customRange3">
-      </div>
-      <button id="submit-ocena" class="submit-btn">Submit</button>
+      <form method="POST" action="../Backend/komentar_ocena.php">
+        <input type="hidden" name="izvodjac" value="Aca Lukas">
+        <div class="mb-3">
+          <label for="customRange3" class="form-label">
+            Ocena: <span id="rangeValue">5</span>
+          </label>
+          <input type="range" class="form-range" min="1" max="10" step="1" value="5" id="customRange3" name="ocena">
+        </div>
+        <button type="submit" class="submit-btn">Pošalji ocenu</button>
+      </form>
     </div>
   </div>
 </div>
@@ -109,5 +108,9 @@
     });
   }
 </script>
+    
+    
+    
+
 </body>
 </html>

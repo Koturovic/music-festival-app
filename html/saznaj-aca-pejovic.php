@@ -1,9 +1,18 @@
+
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: html/login.html");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="sr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Van Gogh</title>
+  <title>Aca Pejovic</title>
 
   <!-- Google font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
@@ -16,19 +25,19 @@
     <div class="row align-items-start">
       <!-- Leva kolona: slika -->
       <div class="col-md-5" id="aca-lukas-slika">
-        <img src="../images/van.jpeg" class="img-fluid" alt="Van Gogh" />
+        <img src="../images/aco-pejovic.jpg" class="img-fluid" alt="Aca Pejovic" />
       </div>
 
       <!-- Desna kolona: tekst -->
       <div class="col-md-7 ps-4">
         <div class="naslov">
-          <h2>Van Gogh</h2>
+          <h2>Aco Pejovic</h2>
         </div>
 
         <div class="o-izvodjacu"><h5> <b>O izvođaču</b></h5></div>
 
         <div class="opis">
-        Van Gogh je poznata srpska rok grupa osnovana 1986. godine. Njihov energični zvuk i hitovi poput „Neko te ima“ i „Strast“ učinili su ih jednom od najuticajnijih rok grupa na ovim prostorima.
+            Aca Pejović je popularni srpski pevač pop-folk muzike poznat po emotivnim baladama i snažnom vokalu. Karijeru je započeo devedesetih, a prepoznatljiv je po hitovima koji su često među najtraženijima na regionalnim muzičkim festivalima.
         </div>
 
         <div class="detalji-nastupa">
@@ -39,9 +48,9 @@
             <div class="col-4">Scena</div>
           </div>
           <div class="row ">
-            <div class="col-4">26.3.2025</div>
+            <div class="col-4">22.3.2025</div>
             <div class="col-4">21:00</div>
-            <div class="col-4">Treca scena</div>
+            <div class="col-4">Glavna scena</div>
           </div>
         </div>
       </div>
@@ -49,9 +58,11 @@
   </section>
 
 
+    
+    
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <div class="container">
+    <div class="container" id="komentari-padding">
   <div class="row text-center">
     <div class="col-md-6 mb-5">
       <h3>KOMENTARIŠITE IZVOĐAČA</h3>

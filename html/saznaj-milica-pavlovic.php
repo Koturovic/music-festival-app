@@ -1,9 +1,18 @@
+
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: html/login.html");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="sr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marija Serifovic</title>
+  <title>Milica Pavlovic</title>
 
   <!-- Google font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
@@ -16,20 +25,21 @@
     <div class="row align-items-start">
       <!-- Leva kolona: slika -->
       <div class="col-md-5" id="aca-lukas-slika">
-        <img src="../images/marija.jpg" class="img-fluid" alt="Marija Serifovic" />
+        <img src="../images/milica.jpeg" class="img-fluid" alt="Milica Pavlovic" />
       </div>
 
       <!-- Desna kolona: tekst -->
       <div class="col-md-7 ps-4">
         <div class="naslov">
-          <h2>Marija Serifovic</h2>
+          <h2>Milica Pavlovic</h2>
         </div>
 
         <div class="o-izvodjacu"><h5> <b>O izvođaču</b></h5></div>
 
         <div class="opis">
-          Marija Šerifović je srpska pevačica moćnog glasa, najpoznatija po pobedi na Pesmi Evrovizije 2007. godine sa pesmom „Molitva“. Njeni emotivni nastupi i iskrena interpretacija balada učinili su je jednom od najcenjenijih vokala na Balkanu.
+        Milica Pavlović je popularna srpska pop-folk pevačica poznata po energičnim nastupima, modernom imidžu i hitovima poput „Sexy Señorita” i „Provereno“. Njena karijera je obeležena uspešnim albumima i prepoznatljivim spojem urbanog popa i tradicionalnih balkanskih zvukova.
         </div>
+
         <div class="detalji-nastupa">
           <h5>Detalji o nastupu</h5>
           <div class="row fw-bold">
@@ -38,9 +48,9 @@
             <div class="col-4">Scena</div>
           </div>
           <div class="row ">
-            <div class="col-4">27.3.2025</div>
+            <div class="col-4">26.3.2025</div>
             <div class="col-4">21:00</div>
-            <div class="col-4">Cetvrta scena</div>
+            <div class="col-4">Treca scena</div>
           </div>
         </div>
       </div>

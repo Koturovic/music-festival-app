@@ -170,14 +170,7 @@ body {
       position: relative;
     }
 
-    .custom-box::after {
-      content: '\2630';
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 22px;
-    }
+    
 
     .comment-box {
       background-color: #d9d9d9;
@@ -438,6 +431,6 @@ body {
     margin-top: 100px;
 
     
-
 }
+
 
