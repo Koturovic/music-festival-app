@@ -30,13 +30,27 @@ try {
     <link rel="stylesheet" href="style.css">
     <!--Proba-->
     <title>Nastupi</title>
+    <style>
+      
+    </style>
+    
 </head>
+<a href="index.html" class="btn btn-secondary mb-4" style="position:absolute; top:24px; left:36px;">
+    ← Nazad na početnu
+</a>
 <body>
-    <div class="container mt-3 text-end">
-        <a href="../music-festival-app/Backend/logout.php" class="btn btn-danger">Logout</a>
-    </div>
+<div class="user-header dropdown">
+  <img src="images/user.png" alt="Korisnik" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="cursor:pointer;">
+  <span class="user-name">@<?= htmlspecialchars($_SESSION['user_name']) ?></span>
+  <a href="Backend/logout.php" class="btn btn-danger">Logout</a>
+  <ul class="dropdown-menu dropdown-menu-end custom-dropdown" aria-labelledby="userDropdown">
+    <li><a class="dropdown-item" href="omiljeni.php">Omiljeni</a></li>
+    <li><a class="dropdown-item" href="obavestenja.php">Obaveštenja</a></li>
+  </ul>
+</div>
     
     
+
     <!--<div class="program">
         <div class="container">
             Predstojeci dogadjaji  *** PREDSTOJECI DOGADJAJI
@@ -121,8 +135,8 @@ try {
   </div>
 </div>
 
-<div class="container mt-5 dogadjaji-section">
-        <h2 class="mb-4 text-white">PREDSTOJEĆI DOGAĐAJI</h2>
+<div class="container mt-5 dogadjaji-section" style="padding-top: 100px;">
+        <h2 class="mb-4 text-black text-center">PREDSTOJEĆI DOGAĐAJI</h2>
         <table class="table table-dark table-hover dogadjaji-table" style="opacity:0.95;">
             <thead>
                 <tr>
@@ -148,7 +162,13 @@ try {
             </tbody>
         </table>
     </div>
-
+  <div class="share-buttons text-center">
+  <span>Podeli na:</span>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://moj-sajt.com/nastupi.php"  class="btn btn-primary">Facebook</a>
+  <a href="https://twitter.com/intent/tweet?url=https://moj-sajt.com/nastupi.php&text=Vidi program festivala!"  class="btn btn-info">X (Twitter)</a>
+  <a href="https://wa.me/?text=Vidi%20program%20festivala%20na%20https://moj-sajt.com/nastupi.php"  class="btn btn-success">WhatsApp</a>
+  <a href="viber://forward?text=Vidi%20program%20festivala%20na%20https://moj-sajt.com/nastupi.php"  class="btn btn-dark">Viber</a>
+</div>
    
 
     

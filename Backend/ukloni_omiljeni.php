@@ -11,13 +11,13 @@ if(!isset($_SESSION['user_id']) || !isset($_POST['izvodjac'])){
 }
 
 
-$korisnik_id = $_SESSION['user_id'];
+$korisnik = $_SESSION['user_id'];
 $izvodjac = $_POST['izvodjac'];
 
 
-$stmt= $conn->prepare("DELETE FROM omiljeni_izvodjaci WHERE korisnik_id = ? AND izvodjac = ?");
-if($stmt->execute([$korisnik_id,$izvodjac])){
-    echo"Izvodjac uuklonjen iz omiljenih! ";
+$stmt= $conn->prepare("DELETE FROM omiljeni_izvodjaci WHERE korisnik = ? AND izvodjac = ?");
+if($stmt->execute([$korisnik,$izvodjac])){
+    
 }else{
     echo"greska pri uklanjanju";
 };

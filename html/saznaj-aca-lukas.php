@@ -18,6 +18,9 @@ if (!isset($_SESSION['user_id'])) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css">
 </head>
+<a href="../nastupi.php" class="btn btn-secondary mb-4" style="position:absolute; top:24px; left:36px;">
+    ← Nazad na nastupe
+</a>
 <body>
     <section class="top container">
     <div class="row align-items-start">
@@ -71,9 +74,10 @@ if (!isset($_SESSION['user_id'])) {
         <div class="custom-box mb-3">
           <textarea class="form-control comment-box mb-3" name="komentar" rows="5" placeholder="Komentarišite.." required></textarea>
         </div>
-        <div class="d-flex gap-2 justify-content-center">
+        <div class="d-flex gap-2 justify-content-center align-items-center mt-3">
           <button type="submit" class="submit-btn">Pošalji komentar</button>
-          <button id="Dodaj-u-omiljene" class="submit-btn" type="button" data-izvodjac="Aca Lukas">Dodaj u omiljene</button>
+          <button id="Dodaj-u-omiljene" class="submit-btn" type="button">Dodaj u omiljene</button>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://tvoj-sajt.com/saznaj-aca-lukas.php" target="_blank" class="share-fb-link">Podeli na Facebook</a>
         </div>
       </form>
     </div>

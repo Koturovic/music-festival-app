@@ -267,6 +267,26 @@ body {
         color: white;
 
     }
+    .share-fb-link{
+        background-color: blue;
+        color: white;
+
+        text-decoration: none;
+  
+        font-weight: 500;
+        padding-top: 30px;
+        transition: background 0.2s, color 0.2s;
+        margin-left: 8px;
+        
+        display: inline-block;
+        border: none;
+        border-radius: 30px;
+        padding: 8px 20px;
+        font-weight: bold;
+        margin: 20px auto 0;
+        display: block;
+    }
+    
 
 .carousel{
     margin:50px;
@@ -430,7 +450,45 @@ body {
     .container{
     margin-top: 100px;
 
+
     
 }
+.user-header {
+  position: absolute;
+  top: 24px;
+  right: 36px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(0,0,0,0.7);
+  padding: 8px 20px;
+  border-radius: 24px;
+}
+.user-header img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  border: 2px solid #ffd700;
+}
+.user-header .user-name {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0 8px 0 0;
+}
+.user-header .btn-danger {
+  font-size: 1rem;
+  padding: 6px 18px;
+}
+.custom-dropdown .dropdown-item:hover {
+  background: #ccc; 
+  color: #222;
+}
+
+
+
 
 
