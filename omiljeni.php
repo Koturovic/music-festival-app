@@ -73,7 +73,8 @@ try {
             </tbody>
         </table>
     </div>
-    <script src="html/js/ukloni_iz_omiljenih.js"></script>
+    <script src="html/js/ukloni_iz_omiljenih.js">
+   </script>
     
 </body>
 </html>
