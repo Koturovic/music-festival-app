@@ -29,13 +29,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Ubaci korisnika u bazu
     $stmt = $conn->prepare("INSERT INTO posetioci (name, email, password, role) VALUES (:name, :email, :password, :role)");
-    $stmt = $conn->prepare("INSERT INTO posetioci (name, email, password, role) VALUES (:name, :email, :password, :role)");
+    
     $stmt->bindParam(":name", $name);
     $stmt->bindParam(":email", $email);
     $stmt->bindParam(":password", $hashed_password);
     $stmt->bindParam(":role", $role);
-    $stmt->bindParam(":role", $role);
-
+    
     if ($stmt->execute()) {
         $last_id = $conn->lastInsertId();
         $_SESSION['user_id'] = $last_id;
