@@ -7,6 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = trim($_POST['name']);
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
+    $role = $_POST['uloga']; // posetioc, izvodjac ili organizator
 
     if (empty($name) || empty($email) || empty($password)) {
         die("Sva polja su obavezna!");
@@ -27,10 +28,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Ubaci korisnika u bazu
-    $stmt = $conn->prepare("INSERT INTO posetioci (name, email, password) VALUES (:name, :email, :password)");
+    $stmt = $conn->prepare("INSERT INTO posetioci (name, email, password, role) VALUES (:name, :email, :password, :role)");
     $stmt->bindParam(":name", $name);
     $stmt->bindParam(":email", $email);
     $stmt->bindParam(":password", $hashed_password);
+    $stmt->bindParam(":role", $role);
 
     if ($stmt->execute()) {
         $last_id = $conn->lastInsertId();
