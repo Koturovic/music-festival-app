@@ -6,6 +6,11 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: html/login.html");
     exit();
 }
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'organizator') {
+ 
+  header("Location: index.html");
+  exit();
+}
 require_once 'Backend/dbconn.php';
 
 try {
@@ -134,6 +139,16 @@ try {
     </button>
   </div>
 </div>
+
+
+
+
+<div class="container text-center mt-5" id="organizator_naslov">
+  <h2 class="mb-3">KAO ORGANIZARTOR IMATE MOGUCNOST DA DODATE NOVE DOGADJAJE</h2>
+    <button class="btn btn-outline-dark learn-more-btn" onclick="window.location.href='organizator_edit.php'">Dodaj novi dogadjaj</button>
+
+</div>
+
 
 <div class="container mt-5 dogadjaji-section" style="padding-top: 100px;">
         <h2 class="mb-4 text-black text-center">PREDSTOJEĆI DOGAĐAJI</h2>
