@@ -76,7 +76,7 @@ if (!isset($_SESSION['user_id'])) {
         </div>
         <div class="d-flex gap-2 justify-content-center align-items-center mt-3">
           <button type="submit" class="submit-btn">Pošalji komentar</button>
-          <button id="Dodaj-u-omiljene" class="submit-btn" type="button">Dodaj u omiljene</button>
+          <button id="Dodaj-u-omiljene" class="submit-btn" type="button" data-izvodjac="Aco Pejovic">Dodaj u omiljene</button>
           <a href="https://www.facebook.com/sharer/sharer.php?u=https://tvoj-sajt.com/saznaj-aca-lukas.php" target="_blank" class="share-fb-link">Podeli na Facebook</a>
         </div>
       </form>

@@ -31,7 +31,8 @@ try {
     <!--Proba-->
     <title>Nastupi</title>
     <style>
-      
+    .saznaj-vise-btn { transition: opacity 0.2s; }
+    td:hover .saznaj-vise-btn { display: inline-block !important; }
     </style>
     
 </head>
@@ -153,7 +154,10 @@ try {
                         <td><?= date('d/m/Y', strtotime($d['datum'])) ?></td>
                         <td><?= htmlspecialchars($d['scena']) ?></td>
                         <td><?= htmlspecialchars($d['zanr']) ?></td>
-                        <td><?= htmlspecialchars($d['izvodjac']) ?></td>
+                        <td style="position:relative;">
+                            <?= htmlspecialchars($d['izvodjac']) ?>
+                            <a href="izvodjac.php?ime=<?= urlencode($d['izvodjac']) ?>" class="btn btn-outline-dark saznaj-vise-btn" style="display:none; margin-left:10px; position:absolute; top:0; right:0;">SAZNAJ VIŠE</a>
+                        </td>
                     </tr>
                     <?php endforeach; ?>
                 <?php else: ?>

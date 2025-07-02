@@ -20,6 +20,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $stmt = $conn->prepare('INSERT INTO dogadjaji (datum, scena, zanr, izvodjac) VALUES (?, ?, ?, ?)');
         $stmt->execute([$datum, $scena, $zanr, $izvodjac]);
+        
+        // Kreiraj obaveštenja za korisnike koji imaju ovog izvođača u omiljenim
+        $stmt = $conn->prepare("SELECT korisnik FROM omiljeni_izvodjaci WHERE izvodjac = ?");
+        $stmt->execute([$izvodjac]);
+        $korisnici = $stmt->fetchAll(PDO::FETCH_COLUMN);
+        foreach ($korisnici as $korisnik_id) {
+            $poruka = "Vaš omiljeni izvođač $izvodjac ima novi nastup $datum!";
+            $stmt2 = $conn->prepare("INSERT INTO obavestenja (korisnik_id, izvodjac, poruka) VALUES (?, ?, ?)");
+            $stmt2->execute([$korisnik_id, $izvodjac, $poruka]);
+        }
         header('Location: ../organizator_edit.php');
         exit();
     } catch (PDOException $e) {

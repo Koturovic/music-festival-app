@@ -49,8 +49,11 @@ try {
   <span class="user-name">@<?= htmlspecialchars($_SESSION['user_name']) ?></span>
   <a href="Backend/logout.php" class="btn btn-danger">Logout</a>
   <ul class="dropdown-menu dropdown-menu-end custom-dropdown" aria-labelledby="userDropdown">
+    <li><a class="dropdown-item" href="ocene_komentari_izvodjaca.php">Komentari i ocene</a></li>
     <li><a class="dropdown-item" href="omiljeni.php">Omiljeni</a></li>
     <li><a class="dropdown-item" href="obavestenja.php">Obaveštenja</a></li>
+    <li><a class="dropdown-item" href="statistika.php">Statistika</a></li>
+    <li><a class="dropdown-item" href="komunikacija.php">Komunikacija sa fanovima</a></li>
   </ul>
 </div>
     
