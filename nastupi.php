@@ -47,6 +47,7 @@ try {
   <ul class="dropdown-menu dropdown-menu-end custom-dropdown" aria-labelledby="userDropdown">
     <li><a class="dropdown-item" href="omiljeni.php">Omiljeni</a></li>
     <li><a class="dropdown-item" href="obavestenja.php">Obaveštenja</a></li>
+    <li><a class="dropdown-item" href="anketa.php">Anketa</a></li>
   </ul>
 </div>
     

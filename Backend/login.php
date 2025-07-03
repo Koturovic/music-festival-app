@@ -1,12 +1,14 @@
 <?php
 session_start();
 require_once 'dbconn.php';
+$admin_secret = isset($_POST['admin_secret']) ? $_POST['admin_secret'] : '';
+require_once __DIR__ . '/../config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Preuzimanje i sanitizacija podataka
     $name = trim($_POST['name']);
     $password = trim($_POST['password']);
-    $role = ($_POST['uloga']);
+    //$role = ($_POST['uloga']); // ne koristimo 
 
     if (empty($name) || empty($password)) {
         die("Sva polja su obavezna!");
@@ -22,8 +24,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         // Provera lozinke
         if (password_verify($password, $user['password'])) {
-            // Uspesno logovanje
-            
+            // Provera da li je korisnik blokiran
+            $stmt_blok = $conn->prepare("SELECT blokiran FROM posetioci WHERE id = ?");
+            $stmt_blok->execute([$user['id']]);
+            if ($stmt_blok->fetchColumn()) {
+                session_destroy();
+                header("Location: ../blokiran.html");
+                exit();
+            }
+            // ako je korisnik uneo administratorsku lozinku redirektuje ga na admin_index.php
+            if ($admin_secret === ADMIN_SECRET) {
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['user_name'] = $user['name'];
+                $_SESSION['user_email'] = $user['email'];
+                $_SESSION['role'] = 'admin';
+                header("Location: ../admin_index.php");
+                exit();
+            }
+            // Uspešno logovanje po ulozi iz baze
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_name'] = $user['name'];
             $_SESSION['user_email'] = $user['email'];

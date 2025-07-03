@@ -2,7 +2,7 @@
 session_start();
 require_once 'dbconn.php';
 
-if (!isset($_SESSION['user_id']) || !isset($_SESSION['role']) || $_SESSION['role'] !== 'organizator') {
+if (!isset($_SESSION['user_id']) || !in_array($_SESSION['role'], ['admin', 'organizator'])) {
     header('Location: ../index.html');
     exit();
 }
@@ -30,12 +30,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt2 = $conn->prepare("INSERT INTO obavestenja (korisnik_id, izvodjac, poruka) VALUES (?, ?, ?)");
             $stmt2->execute([$korisnik_id, $izvodjac, $poruka]);
         }
-        header('Location: ../organizator_edit.php');
+        if ($_SESSION['role'] === 'admin') {
+            header('Location: ../admin_edit.php');
+        } else {
+            header('Location: ../organizator_edit.php');
+        }
         exit();
     } catch (PDOException $e) {
         die('Greška pri unosu: ' . $e->getMessage());
     }
 } else {
-    header('Location: ../organizator_edit.php');
+    if ($_SESSION['role'] === 'admin') {
+        header('Location: ../admin_edit.php');
+    } else {
+        header('Location: ../organizator_edit.php');
+    }
     exit();
 }

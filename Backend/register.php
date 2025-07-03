@@ -13,6 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Sva polja su obavezna!");
     }
 
+    if ($role === 'admin') {
+        die("Nije dozvoljeno registrovati se kao administrator!");
+    }
+
     // Provera da li email već postoji
     // sprecava SQL injection
 

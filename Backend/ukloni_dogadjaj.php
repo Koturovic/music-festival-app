@@ -2,7 +2,7 @@
 session_start();
 require_once 'dbconn.php';
 
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'organizator') {
+if (!isset($_SESSION['user_id']) || !in_array($_SESSION['role'], ['organizator', 'admin'])) {
     http_response_code(403);
     exit('Nemaš dozvolu!');
 }
