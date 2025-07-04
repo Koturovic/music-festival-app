@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'izvodjac') {
  
-  header("Location: index.html");
+  header("Location: index.php");
   exit();
 }
 require_once 'Backend/dbconn.php';
@@ -40,7 +40,7 @@ try {
     </style>
     
 </head>
-<a href="index.html" class="btn btn-secondary mb-4" style="position:absolute; top:24px; left:36px;">
+<a href="index.php" class="btn btn-secondary mb-4" style="position:absolute; top:24px; left:36px;">
     ← Nazad na početnu
 </a>
 <body>

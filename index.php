@@ -1,11 +1,7 @@
-<?php
-session_start();
 
-// var_dump($_SESSION);
-if (!isset($_SESSION['user_id'])) {
-    header("Location: html/login.html");
-    exit();
-}
+
+<?php
+
 require_once 'Backend/dbconn.php';
 
 try {
@@ -28,43 +24,58 @@ try {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+   
     <!--Proba-->
-    <title>Nastupi</title>
-    <style>
-    .saznaj-vise-btn { transition: opacity 0.2s; }
-    td:hover .saznaj-vise-btn { display: inline-block !important; }
-    </style>
-    
+    <title>Muzicki festival</title>
 </head>
-<a href="index.php" class="btn btn-secondary mb-4" style="position:absolute; top:24px; left:36px;">
-    ← Nazad na početnu
-</a>
 <body>
-<div class="user-header dropdown">
-  <img src="images/user.png" alt="Korisnik" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="cursor:pointer;">
-  <span class="user-name">@<?= htmlspecialchars($_SESSION['user_name']) ?></span>
-  <a href="Backend/logout.php" class="btn btn-danger">Logout</a>
-  <ul class="dropdown-menu dropdown-menu-end custom-dropdown" aria-labelledby="userDropdown">
-    <li><a class="dropdown-item" href="omiljeni.php">Omiljeni</a></li>
-    <li><a class="dropdown-item" href="obavestenja.php">Obaveštenja</a></li>
-    <li><a class="dropdown-item" href="anketa.php">Anketa</a></li>
-    <li><a class="dropdown-item" href="pretrazivanje.php">Pretrazi</a></li>
-  </ul>
-</div>
+    <header> 
+        <h1 id="MF">MUZICKI FESTIVAL</h1>
+        <nav>
+            <ul class="nav-bar">
     
-    
+                
+                <li><a href="#">Početna</a></li>
+                <li><a href="../music-festival-app/html/o-nama.html">O nama</a></li>
+                <li><a href="../music-festival-app/nastupi.php">Događaji</a></li>
+                
+                
+            </ul>
+        </nav>
+        <div class="dobrodosli">
+            DOBRODOSLI 30 GODINA TRADICIJE
+        </div>
+        <div class="button-container">
+            <button class="custom-btn" onclick="window.location.href='html/register.html';"> 
+                Registruj se
+                <span class="icon"><img src="images/arrow (3).png" alt="strelica"></span>
+            </button>
+            
+            <button class="custom-btn" onclick="window.location.href='html/login.html';">
+                Prijavi se
+                <span class="icon"><img src="images/arrow (3).png" alt="strelica"></span>
+            </button>
 
+        </div>
+    </header>
+    <div class="landing">
+        
+        <div class="bg-image"></div>
+
+    </div>
+    
     <!--<div class="program">
         <div class="container">
             Predstojeci dogadjaji  *** PREDSTOJECI DOGADJAJI
         </div>
     </div> -->
 
-    
 
+
+
+    
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
   
   
   <div class="container text-center mt-5">
@@ -79,22 +90,18 @@ try {
           <div class="col-6 col-md-3">
             <img src="images/aca-lukas.png" alt="Aca Lukas" class="d-block w-100">
             <p class="artist-name">Aca Lukas</p>
-            <button class="btn btn-outline-dark learn-more-btn" onclick="window.location.href='html/saznaj-aca-lukas.php'">SAZNAJ VIŠE</button>
           </div>
           <div class="col-6 col-md-3">
             <img src="images/aco-pejovic.jpg" class="d-block w-100" alt="Aco Pejovic">
             <p class="artist-name">Aco Pejovic</p>
-            <button class="btn btn-outline-dark learn-more-btn" onclick="window.location.href='html/saznaj-aca-pejovic.php'">SAZNAJ VIŠE</button>
           </div>
           <div class="col-6 col-md-3 d-none d-md-block">
             <img src="images/Dragana-Mirkovic-2.jpg" class="d-block w-100" alt="">
             <p class="artist-name">Dragana Mirkovic</p>
-            <button class="btn btn-outline-dark learn-more-btn" onclick="window.location.href='html/saznaj-dragana.php'">SAZNAJ VIŠE</button>
           </div>
           <div class="col-6 col-md-3 d-none d-md-block">
             <img src="images/sasa-matic.jpg" class="d-block w-100" alt="Sasa Matic">
             <p class="artist-name">Sasa Matic</p>
-            <button class="btn btn-outline-dark learn-more-btn" onclick="window.location.href='html/saznaj-sasa.php'">SAZNAJ VIŠE</button>
           </div>
         </div>
       </div>
@@ -105,22 +112,20 @@ try {
           <div class="col-6 col-md-3">
             <img src="images/milica.jpeg" class="d-block w-100" alt="Milica Pavlovic">
             <p class="artist-name">Milica Pavlovic</p>
-            <button class="btn btn-outline-dark learn-more-btn" onclick="window.location.href='html/saznaj-milica-pavlovic.php'">SAZNAJ VIŠE</button>
           </div>
           <div class="col-6 col-md-3">
             <img src="images/marija.jpg" class="d-block w-100" alt="Marija Šerifović">
             <p class="artist-name">Marija Šerifović</p>
-            <button class="btn btn-outline-dark learn-more-btn" onclick="window.location.href='html/saznaj-marija-serifovic.php'">SAZNAJ VIŠE</button>
           </div>
           <div class="col-6 col-md-3 d-none d-md-block">
             <img src="images/slobaa.jpg" class="d-block w-100" alt="Sloba">
             <p class="artist-name">Sloba Radanovic</p>
-            <button class="btn btn-outline-dark learn-more-btn" onclick="window.location.href='html/saznaj-sloba-radanovic.php'">SAZNAJ VIŠE</button>
+            
           </div>
           <div class="col-6 col-md-3 d-none d-md-block">
             <img src="images/van.jpeg" class="d-block w-100" alt="Van Gogh">
             <p class="artist-name">Van Gogh</p>
-            <button class="btn btn-outline-dark learn-more-btn" onclick="window.location.href='html/saznaj-van-gog.php'">SAZNAJ VIŠE</button>
+            
           </div>
         </div>
       </div>
@@ -139,13 +144,12 @@ try {
 </div>
 
 <div class="container mt-5 dogadjaji-section" style="padding-top: 100px;">
-        <h2 class="mb-4 text-black text-center">PREDSTOJEĆI DOGAĐAJI</h2>
+        <h2 class="mb-4 text-black text-center">OSNOVNE INFORMACIJE O DOGAĐAJIMA</h2>
         <table class="table table-dark table-hover dogadjaji-table" style="opacity:0.95;">
             <thead>
                 <tr>
                     <th>DATUM</th>
-                    <th>Scena</th>
-                    <th>Zanr</th>
+                   
                     <th>Izvodjac</th>
                 </tr>
             </thead>
@@ -154,12 +158,8 @@ try {
                     <?php foreach ($dogadjaji as $d): ?>
                     <tr>
                         <td><?= date('d/m/Y', strtotime($d['datum'])) ?></td>
-                        <td><?= htmlspecialchars($d['scena']) ?></td>
-                        <td><?= htmlspecialchars($d['zanr']) ?></td>
-                        <td style="position:relative;">
-                            <?= htmlspecialchars($d['izvodjac']) ?>
-                            <a href="izvodjac.php?ime=<?= urlencode($d['izvodjac']) ?>" class="btn btn-outline-dark saznaj-vise-btn" style="display:none; margin-left:10px; position:absolute; top:0; right:0;">SAZNAJ VIŠE</a>
-                        </td>
+                        <td><?= htmlspecialchars($d['izvodjac']) ?></td>
+                        
                     </tr>
                     <?php endforeach; ?>
                 <?php else: ?>
@@ -168,15 +168,12 @@ try {
             </tbody>
         </table>
     </div>
-  <div class="share-buttons text-center">
-  <span>Podeli na:</span>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://moj-sajt.com/nastupi.php"  class="btn btn-primary">Facebook</a>
-  <a href="https://twitter.com/intent/tweet?url=https://moj-sajt.com/nastupi.php&text=Vidi program festivala!"  class="btn btn-info">X (Twitter)</a>
-  <a href="https://wa.me/?text=Vidi%20program%20festivala%20na%20https://moj-sajt.com/nastupi.php"  class="btn btn-success">WhatsApp</a>
-  <a href="viber://forward?text=Vidi%20program%20festivala%20na%20https://moj-sajt.com/nastupi.php"  class="btn btn-dark">Viber</a>
-</div>
-   
+  
 
+
+
+    
+    
     
 
 </body>

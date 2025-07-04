@@ -37,7 +37,7 @@ try {
     td:hover .saznaj-vise-btn { display: inline-block !important; }
     </style>
 </head>
-<a href="index.html" class="btn btn-secondary mb-4" style="position:absolute; top:24px; left:36px;">
+<a href="index.php" class="btn btn-secondary mb-4" style="position:absolute; top:24px; left:36px;">
     ← Nazad na početnu
 </a>
 <body>

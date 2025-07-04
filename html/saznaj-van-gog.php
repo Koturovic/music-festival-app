@@ -91,6 +91,7 @@ if (!isset($_SESSION['user_id'])) {
         </div>
         <button type="submit" class="submit-btn">Pošalji ocenu</button>
       </form>
+      <a href="https://www.youtube.com/watch?v=6QpQ0A5lHn8" target="_blank" class="btn btn-warning mt-2">Pogledaj intervju sa izvođačem</a>
     </div>
   </div>
 </div>

@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['user_id']) || !isset($_SESSION['role']) || !in_array($_SESSION['role'], ['izvodjac', 'admin'])) {
-    header('Location: index.html');
+    header('Location: index.php');
     exit();
 }
 require_once 'Backend/dbconn.php';
